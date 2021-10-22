@@ -7,7 +7,7 @@ class Plant(TimeStampedModel):
     image = models.CharField(max_length=200, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     region = models.CharField(max_length=50)
-    careTips = models.TextField(null=True, blank=True)
+    care_tips = models.TextField(null=True, blank=True)
     benefits = models.TextField(null=True, blank=True)
 
     class Meta:
