@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from django.db.models import Q
+from rest_framework.permissions import IsAuthenticated
 
 from api_base.views import BaseViewSet
 from api_garden.models import Plant
@@ -11,6 +11,7 @@ from api_garden.serializers import PlantSerializer
 class PlantViewSet(BaseViewSet):
     queryset = Plant.objects.all()
     serializer_class = PlantSerializer
+    permission_classes = (IsAuthenticated,)
 
     @action(methods=["get"], detail=False)
     def search(self, request, *args, **kwargs):
