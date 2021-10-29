@@ -34,7 +34,7 @@ def initial_agent_data(apps, schema_editor):
                           name='Nhà thuốc Hồng Mai',
                           address="Số 85, phố Hồng Mai, phường Quỳnh Lôi, quận Hai Bà Trưng, thành phố Hà Nội"),
               agent_model(business_code='K1P9-XY0G-7IOC-DKD6',
-                          eth_address='0xc03efF7f010fe79F3fB9f0242Bf8fFE666666666',
+                          eth_address='0xe35b6c7ac4110832bc5b9895a1e96de621c62914',
                           name='Nhà thuốc Minh Phúc',
                           address="Số 3 ngõ 23 đường Xuân La, phường Xuân La, quận Tây Hồ, thành phố Hà Nội"),
               ]
