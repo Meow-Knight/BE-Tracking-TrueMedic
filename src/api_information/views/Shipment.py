@@ -43,8 +43,10 @@ class ShipmentViewSet(viewsets.ModelViewSet):
             to_object = next(filter(lambda x: x.eth_address.lower() == to_address, factors), None)
 
             value['from_name'] = from_object.name
+            value['from_address'] = from_object.address
             value['to_name'] = to_object.name
-            value['time'] = datetime.utcfromtimestamp(int(transaction[0])).strftime('%Y-%m-%d %H:%M:%S')
+            value['to_address'] = to_object.address
+            value['time'] = datetime.fromtimestamp(int(transaction[0])).strftime('%Y-%m-%d %H:%M:%S')
 
         result = map(lambda item: item[1], sorted_transactions)
         return Response(
