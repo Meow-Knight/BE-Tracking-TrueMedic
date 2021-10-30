@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
+    'corsheaders',
     'api_base',
     'api_information',
 ]
@@ -53,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     # 'django.middleware.csrf.CsrfViewMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -74,6 +77,12 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8080',
+    'http://localhost:8000',
+    'https://fir-e76e8.web.app',
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'
